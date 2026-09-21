@@ -1,0 +1,73 @@
+  name: Regenerar repo apt y publicar
+
+     on:
+       push:
+         branches: [main]
+         paths: ["pools/**", "docs/**", ".github/workflows/repo-apt.yml"]
+       workflow_dispatch:
+
+     permissions:
+       contents: write
+       pages: write
+       id-token: write
+
+     concurrency:
+       group: pages
+       cancel-in-progress: false
+
+     jobs:
+       construir:
+         runs-on: ubuntu-latest
+         steps:
+           - name: Checkout
+             uses: actions/checkout@v4
+
+           - name: Instalar herramientas
+             run: |
+               sudo apt-get update -qq
+               sudo apt-get install -y -qq dpkg-dev apt-utils gnupg
+
+           - name: Importar clave GPG del repo
+             env:
+               REPO_GPG_KEY: ${{ secrets.REPO_GPG_KEY }}
+             run: |
+               echo "$REPO_GPG_KEY" | gpg --batch --import
+               gpg --list-secret-keys --keyid-format short | head -5
+
+           - name: Regenerar indices
+             run: |
+               set -e
+               ARCH=arm64
+               SUITE=stable
+               BIN="dists/$SUITE/main/binary-$ARCH"
+               mkdir -p "$BIN"
+               if find pools/main -name '*.deb' -print -quit | grep -q .; then
+                 dpkg-scanpackages --multiversion pools/main > "$BIN/Packages"
+               else
+                 : > "$BIN/Packages"
+               fi
+               gzip -9kf "$BIN/Packages"
+               (cd dists/$SUITE && apt-ftparchive release . > Release)
+               gpg --batch --yes --armor --detach-sign --output dists/$SUITE/Release.gpg dists/$SUITE/
+     Release
+               gpg --batch --yes --armor --clearsign --output dists/$SUITE/InRelease dists/$SUITE/Release
+
+           - name: Commit de los indices regenerados
+             run: |
+               git config user.name "HuaLo Bot"
+               git config user.email "bot@hualo.local"
+               git add -A
+               if git diff --cached --quiet; then
+                 echo "sin cambios"
+               else
+                 git commit -m "apt: regenerar indices (automatico)"
+                 git push origin main
+               fi
+
+           - name: Desplegar a GitHub Pages (gh-pages)
+             uses: peaceiris/actions-gh-pages@v4
+             with:
+               github_token: ${{ secrets.GITHUB_TOKEN }}
+               publish_dir: .
+               publish_branch: gh-pages
+               force_orphan: true
