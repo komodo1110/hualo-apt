@@ -1,33 +1,27 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA512
 
-Architectures: arm64
-Codename: stable
-Components: main
-Date: Mon, 21 Sep 2026 19:03:07 +0000
-Label: HuaLo
-Origin: HuaLo
-Suite: stable
+Date: Tue, 22 Sep 2026 03:16:44 +0000
 MD5Sum:
- bb2d1efda0c29c7e7ccf00d0ebd90f6a              134 Release
+ afa637bed00e4c46691ddf1f8df1ce2a               38 Release
  d41d8cd98f00b204e9800998ecf8427e                0 main/binary-arm64/Packages
- b296b2f4a43abd223e1f8fa407680752               29 main/binary-arm64/Packages.gz
+ b85f3a8687c9825861fd1da3568a46ae               29 main/binary-arm64/Packages.gz
 SHA1:
- aee61abf06e08d4c2a37ad8fb3fc47c5e08adb68              134 Release
+ 6495a6c6ead5c6a5ac7e163299cc37e4610a4749               38 Release
  da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-arm64/Packages
- 158c57d2f9e6303f16c5cddc0678d0da663f3533               29 main/binary-arm64/Packages.gz
+ 0ee6e32897600348c6641defddf54c3b90107261               29 main/binary-arm64/Packages.gz
 SHA256:
- ff5b1c7a35e029eeebe4ed6d9077b9a9cddb334ebd17157a051370cf8bb76bf9              134 Release
+ a5b58e1df5a8f4f8cd9a5008cd665d7a650462d11a6d5749b4a8a9200b9890e3               38 Release
  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-arm64/Packages
- 8e2b83bfd2408a232fe8b0eda3b91282be13aa208fd25ec51dc4760b2b576c8e               29 main/binary-arm64/Packages.gz
+ b695ef8f43e9dbc83eb41d44bad3cf32eaa35ab77f03ed75a1624c50936d9678               29 main/binary-arm64/Packages.gz
 SHA512:
- 40af471da03e8594deb88413775b56323d157ce50aba874c9f37c6e55a1d6506c60b5390f5f6c5c81666ca773fa5144753200c8f7676c36de9f5993bc7634adb              134 Release
+ 1716d0fbf3265bbdefe351c25ea17bb40127fd007d41057aea664851284b4ec0826ca95f3db02112559b10057de148b290a605dfd4beb087e99dbafdf2969aae               38 Release
  cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-arm64/Packages
- 01703734797b5a6d26ad85cd36302f39cc0d07e59675c623c6d1de82d3fd13710f61ee9ddf2f81a8caf0e0a277c72e9d7faca994b85eb068c207dca360ab3d38               29 main/binary-arm64/Packages.gz
+ 0f4e09d0d52de9aee92b7d87909236e2f83f2c61f3a7eb6dc96dff1436ce2ff99b5f2bd6aa598f0baba994a4ed8506ac27e5c0b91f6f76b1a47dcb23a0d32bdd               29 main/binary-arm64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQQaGvFAx5ZuoaJxZ6bKF65dAbYe3gUCarF/bAAKCRDKF65dAbYe
-3oYoAP0TKBSmhBIXBaRpy+4/L2cFpx/kNSL2R1ZVzhORtsAt/gEA1ghC7FuoUCQs
-OxgaLHNbY2nqirtc3TsYC+3vDxntTAw=
-=WNPg
+iHUEARYKAB0WIQQaGvFAx5ZuoaJxZ6bKF65dAbYe3gUCarHzHAAKCRDKF65dAbYe
+3q+6AQDJkO8o6GeGTc1gmEcdlXStu2pCtcHrUwUcYoHo0gfO8QD9Ei/zR85EJ5mk
+OG2kCKys0Ojbqem+MzcbrcXDyH4OMAA=
+=q769
 -----END PGP SIGNATURE-----
