@@ -1,0 +1,25 @@
+HuaLo - documentacion y novedades
+==================================
+
+Version 2.1.0 (Fase 1)
+----------------------
+* Terminal funcional: PTY propio (JNI/NDK), emulacion xterm-256color,
+  true color, Unicode (doble ancho y emojis).
+* Entorno base propio (files/usr): apt/dpkg con glibc, ejecutado con
+  proot incluido. Prefix aislado de cualquier otra app.
+* Comando pkg: wrapper propio de apt (update/install/remove/upgrade/
+  search/list/clean/docs/doctor).
+* Bootstrap de una sola vez: instala el entorno desde aqui mismo.
+* sin telemetria, sin anuncios, permisos minimos justificados.
+
+Comandos rapidos
+----------------
+  pkg update                actualiza los indices
+  pkg install git curl      instala paquetes
+  pkg upgrade               actualiza todo el sistema
+  pkg docs                  este texto
+
+Repositorio
+-----------
+Los paquetes .deb se sirven desde GitHub Pages y estan firmados con GPG.
+Envianos un .deb en https://github.com/komodo1110/hualo-apt
