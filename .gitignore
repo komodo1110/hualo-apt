@@ -1,0 +1,33 @@
+# Claves privadas y secretos: NUNCA subir
+*_GPG_KEY*
+*.asc
+!.gitkeep
+!pubkey.asc
+!docs/pubkey.asc
+*.key
+*.pem
+*.gpg.priv
+*.secret
+.env
+.env.*
+
+# Rutas/entornos locales del dispositivo de desarrollo
+root/
+local.properties
+*.local
+
+# Temporal / build / indexado apt
+*.deb.*
+*.tmp
+*.log
+apt-ftparchive.cache.db
+/tmp/
+tmp/
+
+# Editor y sistema
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
